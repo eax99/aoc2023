@@ -1,5 +1,3 @@
-#import fileinput
-#from operator import itemgetter
 infile = open("inputs/10", "r")
 #infile = open("tests/10c", "r")
 intext = infile.read().rstrip()
@@ -162,7 +160,7 @@ while route_A_next not in route_B_visited and route_B_next not in route_A_visite
     #the_bitmap[route_B_next[0]][route_B_next[1]] = 'w'
 #print(list(sorted(route_A_visited)), list(sorted(route_B_visited)))
 #print(*map(lambda l: "".join(l), the_bitmap), sep="\n") # unfilled bitmap
-print("part 1:", route_len) # done at 07:47 UTC+2
+#print("part 1:", route_len) # done at 07:47 UTC+2
 # part 2 break at 07:56 UTC+2, resume at 16:20
 
 # the strategy is to do a floodfill on the_bitmap (which isn't a real bitmap
@@ -187,8 +185,8 @@ while len(fill_stack) > 0:
         fill_stack.append((bit_row, bit_col - 1))
     if bit_col + 1 < bm_width and the_bitmap[bit_row][bit_col + 1] == '.':
         fill_stack.append((bit_row, bit_col + 1))
-#print(*map(lambda l: "".join(l), the_bitmap), sep="\n") # filled bitmap
-#print()
+print(*map(lambda l: "".join(l), the_bitmap), sep="\n") # filled bitmap
+print()
 bitmap_square_centers = [bitmap_row[1::3] for bitmap_row in the_bitmap[1::3]]
 #print(*map(lambda l: "".join(l), bitmap_square_centers), sep="\n")
 inside = 0
@@ -196,4 +194,4 @@ for row in bitmap_square_centers:
     for col in row:
         if col == '.':
             inside += 1
-print("part 2:", inside) # done at 17:06 UTC+2
+#print("part 2:", inside) # done at 17:06 UTC+2
