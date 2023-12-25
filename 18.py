@@ -1,5 +1,4 @@
 import fileinput
-from itertools import pairwise
 
 digger_1 = [0, 0] # zeroth = Y = line, first = X = column
 digger_2 = [0, 0]
